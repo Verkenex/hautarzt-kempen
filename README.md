@@ -9,13 +9,54 @@ Neue statische Website für `hautarzt-kempen.de`.
 - kein CMS, keine Datenbank
 - Deployment per SFTP auf ALL-INKL
 
-## Lokal
+## Voraussetzungen
+
+- Node.js **22.12.0 oder neuer**
+- npm
+- empfohlen: offizielle Astro-Erweiterung für VS Code
+
+Prüfen:
+
+```bash
+node -v
+npm -v
+```
+
+## Lokal starten
+
+Wichtig: Dieses Projekt wird **nicht** mit PHP gestartet.
 
 ```bash
 npm install
 npm run dev
-npm run build
 ```
+
+Danach im Browser öffnen:
+
+```text
+http://localhost:4321/
+```
+
+Wenn VS Code in einer VM, einem Container oder per Remote-Verbindung läuft:
+
+```bash
+npm run dev:host
+```
+
+Dann die von Astro ausgegebene Network-Adresse bzw. die VS-Code-Portweiterleitung für Port 4321 verwenden.
+
+Produktionsbuild prüfen:
+
+```bash
+npm run build
+npm run preview
+```
+
+## ALL-INKL
+
+Nur der Inhalt aus `dist/` wird auf den Webspace hochgeladen. Quellcode, `node_modules/` und Astro selbst gehören nicht auf den Server.
+
+Für Staging wird ein eigenes Unterverzeichnis verwendet; die produktive Domain `hautarzt-kempen.de` wird erst beim finalen Launch umgeschaltet.
 
 ## Grundsätze
 
