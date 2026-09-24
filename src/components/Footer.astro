@@ -3,11 +3,14 @@ import { practice } from '../data/site';
 ---
 <footer class="site-footer">
   <div class="container footer-main">
-    <div class="footer-brand"><strong>Hautärztliches MVZ Kempen</strong><span>Ein Standort der CORIUS Gruppe</span></div>
+    <div class="footer-brand">
+      <img class="footer-logo" src="/assets/mvz-kempen-logo.svg" width="1180" height="312" alt="Hautärztliches MVZ Kempen · CORIUS" />
+      <span>{practice.legalName} · Dermatologie in Kempen</span>
+    </div>
     <nav class="footer-links" aria-label="Fußnavigation">
       <a href="/behandlung/">Leistungen</a><a href="/team/">Ärzteteam</a><a href="/praxis/">Praxis</a>
       <a href="/kontakt-termine/">Kontakt</a><a href="/impressum/">Impressum</a><a href="/datenschutzerklarung/">Datenschutz</a>
     </nav>
   </div>
-  <div class="container footer-bottom">© {new Date().getFullYear()} {practice.legalName}</div>
+  <div class="container footer-bottom">© {new Date().getFullYear()} {practice.legalName} · St. Huberter Straße 25 · 47906 Kempen</div>
 </footer>

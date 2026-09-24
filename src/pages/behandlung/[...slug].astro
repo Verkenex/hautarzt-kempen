@@ -4,10 +4,10 @@ import { services, practice } from '../../data/site';
 export function getStaticPaths(){ return services.map(service=>({params:{slug:service.slug},props:{service}})); }
 const { service } = Astro.props;
 ---
-<PageLayout title={service.title} description={service.summary + ' Beratung und Behandlung im Hautärztlichen MVZ Kempen.'} eyebrow={service.category}>
+<PageLayout title={service.title} description={service.summary + ' Beratung und Behandlung in der Hautarztpraxis Kempen.'} eyebrow={service.category}>
 <Fragment slot="breadcrumb"><a href="/behandlung/">Leistungen</a> / {service.title}</Fragment>
 <section class="section"><div class="container content-grid"><article class="prose">
-<p class="lead">{service.summary}</p><h2>Behandlung im MVZ Kempen</h2>
+<p class="lead">{service.summary}</p><h2>Behandlung in Kempen</h2>
 <p>Auf dieser Seite entsteht die fachlich geprüfte Detailinformation zu {service.title}. Bestehende Inhalte der bisherigen Website werden vor dem Launch medizinisch und redaktionell geprüft und nur dann übernommen, wenn sie weiterhin dem aktuellen Leistungsangebot entsprechen.</p>
 <div class="notice"><strong>Redaktioneller Status:</strong> Struktur und URL sind für die Migration angelegt; der medizinische Detailtext wird vor Veröffentlichung final geprüft.</div>
 <h2>Termin und Beratung</h2><p>Für reguläre dermatologische Anliegen können Sie einen Termin online oder telefonisch vereinbaren. Bei akuten Erkrankungen beachten Sie bitte die Hinweise zur Akutsprechstunde.</p>

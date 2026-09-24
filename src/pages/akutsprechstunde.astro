@@ -1,6 +1,7 @@
 ---
-import PageLayout from '../layouts/PageLayout.astro'; import { practice } from '../data/site';
+import PageLayout from '../layouts/PageLayout.astro';
+import { practice } from '../data/site';
 ---
-<PageLayout title="Akutsprechstunde" description="Hinweise für Patientinnen und Patienten mit akuten Hautproblemen im Hautärztlichen MVZ Kempen." eyebrow="Akute Beschwerden">
+<PageLayout title="Akutsprechstunde" description="Hinweise für Patientinnen und Patienten mit akuten Hautproblemen in der Hautarztpraxis Kempen." eyebrow="Akute Beschwerden">
 <section class="section"><div class="narrow prose"><div class="notice"><strong>Akutsprechstunde:</strong> werktäglich um 08:00 Uhr, ausschließlich für akute Erkrankungen.</div><h2>Bei akutem Behandlungsbedarf</h2><p>Die Akutsprechstunde ist für plötzlich aufgetretene oder deutlich verschlechterte dermatologische Beschwerden vorgesehen. Planbare Anliegen und länger bestehende Beschwerden gehören in einen regulären Termin.</p><h2>Hausarztvermittlungsfall</h2><p>Wenn eine besonders kurzfristige fachärztliche Behandlung erforderlich ist, kann Ihr Hausarzt die Praxis im Rahmen eines Hausarztvermittlungsfalls kontaktieren und einen kurzfristigen Termin abstimmen.</p><p><a class="button" href={practice.phoneHref}>Praxis anrufen</a></p></div></section>
 </PageLayout>

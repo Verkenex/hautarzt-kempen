@@ -1,6 +1,7 @@
 ---
-import PageLayout from '../layouts/PageLayout.astro'; import { practice } from '../data/site';
+import PageLayout from '../layouts/PageLayout.astro';
+import { practice } from '../data/site';
 ---
-<PageLayout title="Kontakt & Termine" description="Kontakt, Praxiszeiten, Terminbuchung und Anfahrt zum Hautärztlichen MVZ Kempen, St. Huberter Straße 25." eyebrow="Wir sind für Sie da">
+<PageLayout title="Kontakt & Termine" description="Kontakt, Praxiszeiten, Terminbuchung und Anfahrt zur Hautarztpraxis der MVZ Corius Kempen GmbH, St. Huberter Straße 25." eyebrow="Wir sind für Sie da">
 <section class="section"><div class="container contact-grid"><div><h3>Anschrift</h3><p>{practice.legalName}<br />{practice.street}<br />{practice.postalCode} {practice.city}</p><p><a class="button ghost" href={practice.directions} target="_blank" rel="noopener noreferrer">Route öffnen</a></p></div><div><h3>Praxiszeiten</h3><table class="hours"><tbody>{practice.hours.map(([day,morning,afternoon])=><tr><td>{day}</td><td>{morning}</td><td>{afternoon}</td></tr>)}</tbody></table></div><div><h3>Kontakt</h3><p><a href={practice.phoneHref}>{practice.phoneDisplay}</a><br />Fax {practice.fax}<br /><a href={'mailto:'+practice.email}>{practice.email}</a></p><p><a class="button" href={practice.doctolib} target="_blank" rel="noopener noreferrer">Termin buchen</a></p></div></div></section>
 </PageLayout>

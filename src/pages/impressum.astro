@@ -1,6 +1,16 @@
 ---
 import PageLayout from '../layouts/PageLayout.astro';
+import { practice } from '../data/site';
 ---
-<PageLayout title="Impressum" description="Anbieterkennzeichnung des Hautärztlichen MVZ Kempen." eyebrow="Rechtliches">
-<section class="section"><div class="narrow prose"><div class="notice"><strong>Vor Launch rechtlich final prüfen:</strong> Die Angaben basieren auf dem derzeitigen Impressum der Bestandswebsite und werden vor Veröffentlichung erneut verifiziert.</div><h2>Angaben zum Anbieter</h2><p>Hautärztliches MVZ Kempen GmbH<br />in Trägerschaft der MVZ Corius Kempen GmbH<br />St. Huberter Straße 25<br />47906 Kempen</p><p>Telefon: +49 2152 912220<br />E-Mail: post@hautarzt-kempen.de</p><h2>Geschäftsführung</h2><p>Dr. med. Klaus Gerecht<br />Jan Zeiler<br />Heidi Niemöller</p><h2>Handelsregister</h2><p>Amtsgericht Krefeld · HRB 17980</p><h2>Inhaltlich verantwortlich</h2><p>Dr. med. Klaus Gerecht</p></div></section>
+<PageLayout title="Impressum" description="Anbieterkennzeichnung der MVZ Corius Kempen GmbH." eyebrow="Rechtliches">
+<section class="section"><div class="narrow prose">
+  <div class="notice"><strong>Vor Launch final verifizieren:</strong> Firmierung, Registerdaten und Vertretungsberechtigte werden unmittelbar vor Veröffentlichung nochmals gegen einen aktuellen Registerstand geprüft.</div>
+  <h2>Angaben zum Anbieter</h2>
+  <p><strong>{practice.legalName}</strong><br />{practice.street}<br />{practice.postalCode} {practice.city}</p>
+  <p>Telefon: +49 2152 912220<br />E-Mail: {practice.email}</p>
+  <h2>Handelsregister</h2><p>Amtsgericht Krefeld · HRB 17980</p>
+  <h2>Ärztliche Leitung</h2><p>Dr. med. Klaus Gerecht</p>
+  <h2>Inhaltlich verantwortlich</h2><p>Dr. med. Klaus Gerecht</p>
+  <h2>Gruppenzugehörigkeit</h2><p>Die MVZ Corius Kempen GmbH ist Teil der CORIUS Gruppe.</p>
+</div></section>
 </PageLayout>

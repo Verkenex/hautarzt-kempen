@@ -3,7 +3,7 @@ import BaseLayout from './BaseLayout.astro';
 interface Props { title: string; description: string; eyebrow?: string; }
 const { title, description, eyebrow } = Astro.props;
 ---
-<BaseLayout title={title + ' | Hautärztliches MVZ Kempen'} description={description}>
+<BaseLayout title={title + ' | Hautarztpraxis Kempen'} description={description}>
   <header class="page-hero"><div class="container">
     <div class="breadcrumbs"><a href="/">Start</a> / <slot name="breadcrumb">{title}</slot></div>
     {eyebrow && <p class="eyebrow">{eyebrow}</p>}<h1>{title}</h1><p class="lead">{description}</p>

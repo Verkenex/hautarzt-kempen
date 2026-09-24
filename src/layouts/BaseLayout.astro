@@ -7,11 +7,31 @@ interface Props { title: string; description: string; canonical?: string; noinde
 const { title, description, canonical = Astro.url.pathname, noindex = false } = Astro.props;
 const canonicalUrl = new URL(canonical, 'https://www.hautarzt-kempen.de').href;
 const staging = import.meta.env.PUBLIC_SITE_ENV === 'staging';
+const dayMap: Record<string,string> = {
+  Montag:'https://schema.org/Monday',
+  Dienstag:'https://schema.org/Tuesday',
+  Mittwoch:'https://schema.org/Wednesday',
+  Donnerstag:'https://schema.org/Thursday',
+  Freitag:'https://schema.org/Friday'
+};
+const openingHoursSpecification = practice.hours.flatMap(([day,morning,afternoon]) =>
+  [morning,afternoon].filter(Boolean).map((period) => {
+    const [opens,closes] = period.split('–');
+    return {'@type':'OpeningHoursSpecification',dayOfWeek:dayMap[day],opens,closes};
+  })
+);
 const schema = {
-  '@context':'https://schema.org','@type':'MedicalClinic',name:practice.legalName,
-  url:'https://www.hautarzt-kempen.de/',telephone:'+492152912220',email:practice.email,
+  '@context':'https://schema.org',
+  '@type':'MedicalClinic',
+  '@id':'https://www.hautarzt-kempen.de/#practice',
+  name:practice.legalName,
+  alternateName:practice.brandName,
+  url:'https://www.hautarzt-kempen.de/',
+  telephone:'+492152912220',
+  email:practice.email,
   address:{'@type':'PostalAddress',streetAddress:practice.street,postalCode:practice.postalCode,addressLocality:practice.city,addressCountry:'DE'},
-  medicalSpecialty:['Dermatology']
+  medicalSpecialty:'Dermatology',
+  openingHoursSpecification
 };
 ---
 <!doctype html>
@@ -23,8 +43,9 @@ const schema = {
   <meta name="description" content={description} />
   {(noindex || staging) && <meta name="robots" content="noindex,nofollow" />}
   <link rel="canonical" href={canonicalUrl} />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
   <meta property="og:type" content="website" /><meta property="og:locale" content="de_DE" />
-  <meta property="og:site_name" content={practice.name} /><meta property="og:title" content={title} />
+  <meta property="og:site_name" content={practice.brandName} /><meta property="og:title" content={title} />
   <meta property="og:description" content={description} /><meta property="og:url" content={canonicalUrl} />
   <title>{title}</title>
   <script type="application/ld+json" set:html={JSON.stringify(schema)} />

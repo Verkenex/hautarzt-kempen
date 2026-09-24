@@ -1,6 +1,7 @@
 export const practice = {
-  name: 'Hautärztliches MVZ Kempen',
-  legalName: 'Hautärztliches MVZ Kempen GmbH',
+  name: 'MVZ Corius Kempen GmbH',
+  legalName: 'MVZ Corius Kempen GmbH',
+  brandName: 'Hautarztpraxis Kempen',
   street: 'St. Huberter Straße 25',
   postalCode: '47906',
   city: 'Kempen',
@@ -9,6 +10,7 @@ export const practice = {
   fax: '+49 2152 9122220',
   email: 'post@hautarzt-kempen.de',
   doctolib: 'https://www.doctolib.de/medizinisches-versorgungszentrum-mvz/kempen/hautaerztliches-mvz-kempen-gmbh',
+  digitalRegistration: 'https://gonelly.de/o/coriuskempen/v2',
   directions: 'https://www.google.com/maps/search/?api=1&query=St.%20Huberter%20Stra%C3%9Fe%2025%2C%2047906%20Kempen',
   hours: [
     ['Montag', '08:00–12:00', '15:00–18:00'],
@@ -19,12 +21,48 @@ export const practice = {
   ]
 } as const;
 
-export type Doctor = { name: string; role: string; details: string; href?: string };
+export type Doctor = {
+  name: string;
+  role: string;
+  details: string;
+  href?: string;
+  image?: string;
+  imageAlt?: string;
+  initials: string;
+};
+
 export const doctors: Doctor[] = [
-  { name: 'Dr. med. Klaus Gerecht', role: 'Ärztlicher Leiter', details: 'Facharzt für Haut- und Geschlechtskrankheiten · Phlebologie · Proktologie', href: '/team/dr-med-klaus-gerecht/' },
-  { name: 'Dr. med. Moritz Berkenkamp', role: 'Facharzt', details: 'Facharzt für Dermatologie' },
-  { name: 'Dr. (GR) Avgousta Hadjisoteriou', role: 'Ärztin in Weiterbildung', details: 'Dermatologie' },
-  { name: 'Orhan Emre Avsar', role: 'Arzt in Weiterbildung', details: 'Dermatologie' }
+  {
+    name: 'Dr. med. Klaus Gerecht',
+    role: 'Ärztlicher Leiter',
+    details: 'Facharzt für Haut- und Geschlechtskrankheiten · Phlebologie · Proktologie',
+    href: '/team/dr-med-klaus-gerecht/',
+    image: 'https://www.hautarzt-kempen.de/wp-content/uploads/2024/11/Klaus-Gerecht-1.webp',
+    imageAlt: 'Dr. med. Klaus Gerecht',
+    initials: 'KG'
+  },
+  {
+    name: 'Dr. med. Moritz Berkenkamp',
+    role: 'Facharzt',
+    details: 'Facharzt für Dermatologie',
+    image: 'https://www.hautarzt-kempen.de/wp-content/uploads/2026/07/IMG_5015.jpeg-002.png',
+    imageAlt: 'Dr. med. Moritz Berkenkamp',
+    initials: 'MB'
+  },
+  {
+    name: 'Dr. (GR) Avgousta Hadjisoteriou',
+    role: 'Ärztin in Weiterbildung',
+    details: 'Dermatologie',
+    image: 'https://www.hautarzt-kempen.de/wp-content/uploads/2026/06/Frau_Dr_Hadjisoteriou_480x480.webp',
+    imageAlt: 'Dr. (GR) Avgousta Hadjisoteriou',
+    initials: 'AH'
+  },
+  {
+    name: 'Orhan Emre Avsar',
+    role: 'Arzt in Weiterbildung',
+    details: 'Dermatologie',
+    initials: 'OA'
+  }
 ];
 
 export type Service = { slug: string; title: string; category: string; summary?: string };
@@ -73,8 +111,8 @@ const aesthetics = [
 const map = (items: string[][], category: string): Service[] => items.map(([slug, title]) => ({
   slug, title, category,
   summary: category === 'Ästhetische Dermatologie'
-    ? 'Ärztliche Beratung und dermatologisch verantwortete Behandlung im Hautärztlichen MVZ Kempen.'
-    : 'Diagnostik, Beratung und Behandlung im Hautärztlichen MVZ Kempen.'
+    ? 'Ärztliche Beratung und dermatologisch verantwortete Behandlung in der Hautarztpraxis Kempen.'
+    : 'Diagnostik, Beratung und Behandlung in der Hautarztpraxis Kempen.'
 }));
 export const services = [
   ...map(dermatology, 'Dermatologie'),

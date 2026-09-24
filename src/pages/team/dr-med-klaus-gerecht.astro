@@ -1,10 +1,12 @@
 ---
 import PageLayout from '../../layouts/PageLayout.astro';
-import { practice } from '../../data/site';
+import { practice, doctors } from '../../data/site';
+const doctor = doctors[0];
 ---
-<PageLayout title="Dr. med. Klaus Gerecht" description="Ärztlicher Leiter des Hautärztlichen MVZ Kempen. Facharzt für Haut- und Geschlechtskrankheiten, Phlebologie und Proktologie." eyebrow="Ärztliche Leitung">
+<PageLayout title="Dr. med. Klaus Gerecht" description="Ärztlicher Leiter der MVZ Corius Kempen GmbH. Facharzt für Haut- und Geschlechtskrankheiten, Phlebologie und Proktologie." eyebrow="Ärztliche Leitung">
 <Fragment slot="breadcrumb"><a href="/team/">Ärzteteam</a> / Dr. med. Klaus Gerecht</Fragment>
 <section class="section"><div class="container content-grid"><article class="prose">
+{doctor.image && <img src={doctor.image} width="720" height="880" alt={doctor.imageAlt} style="border-radius:12px;margin-bottom:36px;max-height:560px;width:100%;object-fit:cover;object-position:center 22%;" />}
 <p class="lead">Dr. med. Klaus Gerecht lebt und arbeitet in Kempen und prägt den dermatologischen Standort seit der Gründung seiner Hautarztpraxis im August 1994.</p>
 <h2>Qualifikation</h2><p>Facharzt für Haut- und Geschlechtskrankheiten mit Zusatzbezeichnungen Phlebologie und Proktologie.</p>
 <h2>Beruflicher Weg</h2><p>Nach dem Medizinstudium an der Rheinischen Friedrich-Wilhelms-Universität Bonn und Stationen im In- und Ausland arbeitete Dr. Gerecht unter anderem an den Hautkliniken der Universität Essen und der Universitätsklinik Köln. 1994 bestand er die Facharztprüfung und gründete im selben Jahr seine Praxis in Kempen.</p>

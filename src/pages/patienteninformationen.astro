@@ -1,6 +1,15 @@
 ---
-import PageLayout from '../layouts/PageLayout.astro'; import { practice } from '../data/site';
+import PageLayout from '../layouts/PageLayout.astro';
+import { practice } from '../data/site';
 ---
-<PageLayout title="Patienteninformationen" description="Die wichtigsten Informationen für Ihren Besuch im Hautärztlichen MVZ Kempen – Termin, Akutsprechstunde, Anmeldung und Kontakt." eyebrow="Gut vorbereitet">
-<section class="section"><div class="narrow prose"><h2>Termin vereinbaren</h2><p>Reguläre Termine können Sie online über Doctolib vereinbaren oder die Praxis telefonisch kontaktieren.</p><p><a class="button" href={practice.doctolib} target="_blank" rel="noopener noreferrer">Online-Termin buchen</a></p><h2>Akute Beschwerden</h2><p>Für akute Erkrankungen besteht werktäglich um 08:00 Uhr eine Akutsprechstunde. Bitte beachten Sie die gesonderten Hinweise.</p><p><a class="text-link" href="/akutsprechstunde/">Hinweise zur Akutsprechstunde</a></p><h2 id="anmeldung">Digitale Patientenanmeldung</h2><p>Die Praxis nutzt eine digitale Patientenanmeldung zur Vorbereitung Ihres Besuchs. Der aktuelle direkte Link wird vor dem Launch hier verbindlich hinterlegt.</p><h2>Unterlagen</h2><p>Welche Unterlagen für Ihren konkreten Termin erforderlich sind, richtet sich nach Anlass und Versicherungsstatus. Bei Unsicherheiten kontaktieren Sie die Praxis bitte vorab.</p></div></section>
+<PageLayout title="Patienteninformationen" description="Die wichtigsten Informationen für Ihren Besuch in der Hautarztpraxis der MVZ Corius Kempen GmbH – Termin, Akutsprechstunde, Anmeldung und Kontakt." eyebrow="Gut vorbereitet">
+<section class="section"><div class="narrow prose">
+  <h2>Termin vereinbaren</h2><p>Reguläre Termine können Sie online über Doctolib vereinbaren oder die Praxis telefonisch kontaktieren.</p>
+  <p><a class="button" href={practice.doctolib} target="_blank" rel="noopener noreferrer">Online-Termin buchen</a></p>
+  <h2>Akute Beschwerden</h2><p>Für akute Erkrankungen besteht werktäglich um 08:00 Uhr eine Akutsprechstunde. Bitte beachten Sie die gesonderten Hinweise.</p>
+  <p><a class="text-link" href="/akutsprechstunde/">Hinweise zur Akutsprechstunde</a></p>
+  <h2 id="anmeldung">Digitale Patientenanmeldung</h2><p>Sie können Ihre Patientenangaben bereits vor dem Besuch digital übermitteln. Dadurch lässt sich die Anmeldung in der Praxis beschleunigen.</p>
+  <p><a class="button ghost" href={practice.digitalRegistration} target="_blank" rel="noopener noreferrer">Digitale Anmeldung öffnen</a></p>
+  <h2>Unterlagen</h2><p>Welche Unterlagen für Ihren konkreten Termin erforderlich sind, richtet sich nach Anlass und Versicherungsstatus. Bei Unsicherheiten kontaktieren Sie die Praxis bitte vorab.</p>
+</div></section>
 </PageLayout>
