@@ -3,6 +3,6 @@ import PageLayout from '../../layouts/PageLayout.astro';
 import ContactBand from '../../components/ContactBand.astro';
 import { categories, services } from '../../data/site';
 ---
-<PageLayout title="Leistungen" description="Dermatologie, Allergologie, Phlebologie, Proktologie und ästhetische Dermatologie im Hautärztlichen MVZ Kempen." eyebrow="Behandlung">
+<PageLayout title="Leistungen" description="Dermatologie, Allergologie, Phlebologie, Proktologie und ästhetische Dermatologie in der Hautarztpraxis Kempen." eyebrow="Behandlung">
 <section class="section"><div class="container">{categories.map(category => <section class="category-block"><p class="eyebrow">{category}</p><h2>{category}</h2><div class="link-list">{services.filter(s=>s.category===category).map(s=><a href={'/behandlung/'+s.slug+'/'}>{s.title}</a>)}</div></section>)}</div></section><ContactBand />
 </PageLayout>
