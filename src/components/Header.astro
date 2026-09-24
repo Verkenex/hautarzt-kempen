@@ -1,0 +1,30 @@
+---
+import { practice } from '../data/site';
+---
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="/" aria-label="Hautärztliches MVZ Kempen – Startseite">
+      <span class="brand-main">Hautärztliches MVZ Kempen</span>
+      <span class="brand-sub">CORIUS</span>
+    </a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Menü öffnen">☰</button>
+    <nav class="nav" id="main-nav" aria-label="Hauptnavigation">
+      <a href="/behandlung/">Leistungen</a>
+      <a href="/team/">Ärzteteam</a>
+      <a href="/praxis/">Praxis</a>
+      <a href="/patienteninformationen/">Patienteninfo</a>
+      <a href="/kontakt-termine/">Kontakt</a>
+      <a class="button" href={practice.doctolib} target="_blank" rel="noopener noreferrer">Termin buchen</a>
+    </nav>
+  </div>
+</header>
+<script is:inline>
+  const toggle = document.querySelector('.menu-toggle');
+  const nav = document.querySelector('#main-nav');
+  if (toggle && nav) toggle.addEventListener('click', () => {
+    const open = toggle.getAttribute('aria-expanded') === 'true';
+    toggle.setAttribute('aria-expanded', String(!open));
+    toggle.setAttribute('aria-label', open ? 'Menü öffnen' : 'Menü schließen');
+    nav.classList.toggle('is-open', !open);
+  });
+</script>

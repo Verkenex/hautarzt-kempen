@@ -1,0 +1,40 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+import { practice } from '../data/site';
+interface Props { title: string; description: string; canonical?: string; noindex?: boolean; }
+const { title, description, canonical = Astro.url.pathname, noindex = false } = Astro.props;
+const canonicalUrl = new URL(canonical, 'https://www.hautarzt-kempen.de').href;
+const staging = import.meta.env.PUBLIC_SITE_ENV === 'staging';
+const schema = {
+  '@context':'https://schema.org','@type':'MedicalClinic',name:practice.legalName,
+  url:'https://www.hautarzt-kempen.de/',telephone:'+492152912220',email:practice.email,
+  address:{'@type':'PostalAddress',streetAddress:practice.street,postalCode:practice.postalCode,addressLocality:practice.city,addressCountry:'DE'},
+  medicalSpecialty:['Dermatology']
+};
+---
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width" />
+  <meta name="theme-color" content="#6b1c23" />
+  <meta name="description" content={description} />
+  {(noindex || staging) && <meta name="robots" content="noindex,nofollow" />}
+  <link rel="canonical" href={canonicalUrl} />
+  <meta property="og:type" content="website" /><meta property="og:locale" content="de_DE" />
+  <meta property="og:site_name" content={practice.name} /><meta property="og:title" content={title} />
+  <meta property="og:description" content={description} /><meta property="og:url" content={canonicalUrl} />
+  <title>{title}</title>
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+</head>
+<body>
+  <Header />
+  <main><slot /></main>
+  <Footer />
+  <div class="mobile-actions" aria-label="Schnellzugriff">
+    <a href={practice.doctolib} target="_blank" rel="noopener noreferrer">Termin</a><a href={practice.phoneHref}>Anrufen</a>
+  </div>
+</body>
+</html>

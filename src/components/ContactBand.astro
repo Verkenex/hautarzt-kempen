@@ -1,0 +1,10 @@
+---
+import { practice } from '../data/site';
+---
+<section class="contact-band section-tight" aria-labelledby="kontakt-kurz">
+  <div class="container contact-grid">
+    <div><h3 id="kontakt-kurz">Unsere Praxis</h3><p>{practice.legalName}<br />{practice.street}<br />{practice.postalCode} {practice.city}</p><a class="text-link" href={practice.directions} target="_blank" rel="noopener noreferrer">Route planen</a></div>
+    <div><h3>Praxiszeiten</h3><table class="hours"><tbody>{practice.hours.map(([day,morning,afternoon]) => <tr><td>{day}</td><td>{morning}</td><td>{afternoon}</td></tr>)}</tbody></table></div>
+    <div><h3>Kontakt</h3><p><a href={practice.phoneHref}>{practice.phoneDisplay}</a><br /><a href={'mailto:' + practice.email}>{practice.email}</a></p><p class="muted">Akutsprechstunde: werktäglich um 08:00 Uhr für akute Erkrankungen.</p></div>
+  </div>
+</section>

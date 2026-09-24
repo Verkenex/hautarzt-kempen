@@ -1,0 +1,21 @@
+Options -Indexes
+
+Redirect 301 /behandlung/aesthetische-dermatologie/unerwuenschte-behaarung/ /behandlung/aesthetische-dermatologie/laser-haarentfernung/
+Redirect 301 /behandlung/aesthetische-dermatologie/gefaesserweiterungen-gesicht/ /behandlung/aesthetische-dermatologie/erweiterte-gesichts-aederchen/
+Redirect 301 /ueber-corius/ /praxis/
+
+<IfModule mod_headers.c>
+Header always set X-Content-Type-Options "nosniff"
+Header always set Referrer-Policy "strict-origin-when-cross-origin"
+Header always set Permissions-Policy "camera=(), microphone=(), geolocation=()"
+Header always set X-Frame-Options "SAMEORIGIN"
+</IfModule>
+
+<IfModule mod_expires.c>
+ExpiresActive On
+ExpiresByType image/png "access plus 1 year"
+ExpiresByType image/webp "access plus 1 year"
+ExpiresByType image/avif "access plus 1 year"
+ExpiresByType text/css "access plus 1 month"
+ExpiresByType application/javascript "access plus 1 month"
+</IfModule>

@@ -1,0 +1,38 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ContactBand from '../components/ContactBand.astro';
+import { practice, doctors } from '../data/site';
+const services = [
+  ['Allgemeine Dermatologie','Diagnostik und Behandlung von Erkrankungen der Haut, Haare und Nägel.','/behandlung/dermatologie/'],
+  ['Hautkrebsvorsorge','Früherkennung und differenzierte Beurteilung auffälliger Hautveränderungen.','/behandlung/dermatologie/hautkrebsvorsorge/'],
+  ['Operative Dermatologie','Ambulante dermatologische Eingriffe mit langjähriger operativer Erfahrung.','/behandlung/dermatologie/operative-dermatologie/'],
+  ['Ästhetische Dermatologie','Ärztlich geführte ästhetische Behandlungen mit medizinischem Anspruch.','/behandlung/aesthetische-dermatologie/']
+];
+const actions = [
+  ['01','Online-Termin','Termin direkt über Doctolib buchen.',practice.doctolib,true],
+  ['02','Akutsprechstunde','Hinweise für akute Hautprobleme.','/akutsprechstunde/',false],
+  ['03','Digitale Anmeldung','Patientendaten vor dem Besuch vorbereiten.','/patienteninformationen/#anmeldung',false],
+  ['04','Kontakt & Anfahrt','Adresse, Telefon und Praxiszeiten.','/kontakt-termine/',false]
+];
+---
+<BaseLayout title="Hautarzt Kempen | Hautärztliches MVZ Kempen" description="Hautärztliches MVZ Kempen: Dermatologie, Hautkrebsvorsorge, ambulante Operationen, Allergologie, Phlebologie, Proktologie und ästhetische Dermatologie.">
+<section class="hero"><div class="container hero-grid">
+  <div class="hero-copy"><p class="eyebrow">Fachlich. Persönlich. In Kempen.</p><h1>Moderne Dermatologie in Kempen.</h1>
+  <p class="lead">Dermatologie, Hautkrebsvorsorge, ambulante Operationen und ästhetische Dermatologie – fachärztlich und persönlich betreut.</p>
+  <div class="hero-actions"><a class="button" href={practice.doctolib} target="_blank" rel="noopener noreferrer">Termin buchen</a><a class="button ghost" href="/behandlung/">Unsere Leistungen</a></div></div>
+  <aside class="hero-panel"><div class="hero-panel-content"><p class="eyebrow">Ärztliche Leitung</p><h2>Dr. med. Klaus Gerecht</h2>
+  <p>Seit 1994 dermatologisch in Kempen niedergelassen. Facharzt für Haut- und Geschlechtskrankheiten mit Zusatzbezeichnungen Phlebologie und Proktologie.</p>
+  <a class="button" href="/team/dr-med-klaus-gerecht/" style="background:#fff;color:#6b1c23;border-color:#fff">Zur Vita</a></div></aside>
+</div></section>
+<div class="container quick-wrap"><div class="quick-grid">{actions.map(([n,title,text,href,external]) => <a class="quick" href={href} target={external ? '_blank' : undefined} rel={external ? 'noopener noreferrer' : undefined}><span class="quick-number">{n}</span><strong>{title}</strong><span>{text}</span></a>)}</div></div>
+<section class="section"><div class="container"><div class="section-heading"><div><p class="eyebrow">Unsere Leistungen</p><h2>Für gesunde Haut – medizinisch fundiert und persönlich.</h2></div><a class="text-link" href="/behandlung/">Alle Leistungen</a></div>
+<div class="service-grid">{services.map(([title,text,href],i) => <a class="service-card" href={href}><span class="index">0{i+1}</span><h3>{title}</h3><p>{text}</p><span class="text-link">Mehr erfahren</span></a>)}</div></div></section>
+<section class="leadership section"><div class="container leadership-grid"><div class="portrait-placeholder"><span>Reales Praxisportrait wird eingebunden</span></div><div>
+<p class="eyebrow">Ärztliche Leitung</p><h2>Medizinische Erfahrung mit persönlicher Verantwortung.</h2>
+<p class="lead">Dr. med. Klaus Gerecht prägt den dermatologischen Standort in Kempen seit der Praxisgründung 1994. Heute führt er das ärztliche Team des MVZ.</p>
+<div class="fact-row"><div><strong>seit 1994</strong><span>dermatologisch in Kempen</span></div><div><strong>Dermatologie</strong><span>Phlebologie · Proktologie</span></div></div>
+<a class="text-link" href="/team/dr-med-klaus-gerecht/">Dr. Gerecht kennenlernen</a></div></div></section>
+<section class="section"><div class="container"><div class="section-heading"><div><p class="eyebrow">Ärzteteam</p><h2>Fachliche Expertise. Persönliche Betreuung.</h2></div><a class="text-link" href="/team/">Zum Ärzteteam</a></div>
+<div class="doctor-grid">{doctors.map(d => <article class="doctor-card"><p class="role">{d.role}</p><h3>{d.name}</h3><p>{d.details}</p>{d.href && <a class="text-link" href={d.href}>Profil</a>}</article>)}</div></div></section>
+<ContactBand />
+</BaseLayout>
