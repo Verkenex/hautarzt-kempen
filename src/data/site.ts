@@ -184,6 +184,6 @@ export const practiceTeam: PracticeTeamMember[] = [
   { name:'Dajana Reinecke', role:'Kosmetische Dermatologie · Medizinische Fußpflege', image:'/assets/team/staff/dajana-reinecke.webp', imageAlt:'Dajana Reinecke' },
   { name:'Rita Neuhoff', role:'Kauffrau im Gesundheitswesen', image:'/assets/team/staff/rita-neuhoff.webp', imageAlt:'Rita Neuhoff' },
   { name:'Anja Gerecht-Rovkin', role:'Auszubildende zur Medizinischen Fachangestellten', image:'/assets/team/staff/anja-gerecht-rovkin.webp', imageAlt:'Anja Gerecht-Rovkin' },
-  { name:'Max Gerecht-Rovkin', role:'Praxishilfe', image:'/assets/team/staff/max-gerecht-rovkin.webp', imageAlt:'Max Gerecht-Rovkin' }
+  { name:'Max Gerecht-Rovkin', role:'Praxishilfe', image:'/assets/team/staff/max-gerecht-rovkin.webp', imageAlt:'Max Gerecht-Rovkin' },
   { name:'Michael Liebelt', role:'Facility Manager', image:'/assets/team/staff/michael-liebelt.webp', imageAlt:'Michael Liebelt' }
 ];
