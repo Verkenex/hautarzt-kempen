@@ -295,3 +295,5 @@ p{margin-top:0}
   .online-doctor-card:after{font-size:6rem}
   .service-practical{padding:25px}
 }
+
+.online-doctor-limit{margin:12px 0 0!important;padding-top:13px;border-top:1px solid var(--line);color:#65595a!important;font-size:.76rem;line-height:1.55}
