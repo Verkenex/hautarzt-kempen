@@ -11,7 +11,7 @@ const categoryMap = {
   'Ästhetische Dermatologie': 'Ästhetische Dermatologie'
 };
 
-const areaServices = (name: string) => services.filter(service => service.category === categoryMap[name as keyof typeof categoryMap]);
+const areaServices = (name: string, href: string) => services.filter(service => service.category === categoryMap[name as keyof typeof categoryMap] && '/behandlung/' + service.slug + '/' !== href);
 const hrefForTitle = (title: string) => {
   const service = services.find(item => item.title === title);
   return service ? '/behandlung/' + service.slug + '/' : '/behandlung/';
@@ -46,7 +46,7 @@ const hrefForTitle = (title: string) => {
       </div>
       <div class="service-accordions">
         {serviceAreas.map(area => {
-          const items = areaServices(area.name);
+          const items = areaServices(area.name, area.href);
           return <details class="service-accordion">
             <summary><span>{area.name}</span><small>{items.length} Themen</small></summary>
             <div class="accordion-content">
