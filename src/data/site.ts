@@ -47,7 +47,7 @@ export const doctors: Doctor[] = [
     name: 'Dr. med. Moritz Berkenkamp',
     role: 'Facharzt',
     details: 'Facharzt für Dermatologie',
-    image: '/assets/team/moritz-berkenkamp.png',
+    image: '/assets/team/moritz-berkenkamp.webp',
     imageAlt: 'Dr. med. Moritz Berkenkamp',
     imagePosition: 'center 20%',
     initials: 'MB'
