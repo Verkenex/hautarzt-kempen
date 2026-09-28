@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ContactBand from '../components/ContactBand.astro';
+import OnlineDoctorCard from '../components/OnlineDoctorCard.astro';
 import { practice, doctors, serviceAreas } from '../data/site';
 
 const actions = [
@@ -59,6 +60,10 @@ const specialties = serviceAreas.slice(1,4);
     )}
   </div>
 </div>
+
+<section class="section online-doctor-home">
+  <div class="container"><OnlineDoctorCard title="Hautproblem? Dr. Berkenkamp schaut auch online darauf." /></div>
+</section>
 
 <section class="section">
   <div class="container">

@@ -11,6 +11,8 @@ export const practice = {
   email: 'post@hautarzt-kempen.de',
   doctolib: 'https://www.doctolib.de/medizinisches-versorgungszentrum-mvz/kempen/hautaerztliches-mvz-kempen-gmbh',
   digitalRegistration: 'https://gonelly.de/o/coriuskempen/v2',
+  onlineDoctor: 'https://www.onlinedoctor.de/de/doctors/d/dr-med-moritz-berkenkamp',
+  onlineDoctorInsurers: 'https://www.onlinedoctor.de/partnerversicherungen/',
   directions: 'https://www.google.com/maps/search/?api=1&query=St.%20Huberter%20Stra%C3%9Fe%2025%2C%2047906%20Kempen',
   hours: [
     ['Montag', '08:00–12:00', '15:00–18:00'],

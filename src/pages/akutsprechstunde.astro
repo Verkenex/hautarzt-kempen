@@ -1,7 +1,37 @@
 ---
 import PageLayout from '../layouts/PageLayout.astro';
+import OnlineDoctorCard from '../components/OnlineDoctorCard.astro';
 import { practice } from '../data/site';
 ---
-<PageLayout title="Akutsprechstunde" description="Hinweise für Patientinnen und Patienten mit akuten Hautproblemen in der Hautarztpraxis Kempen." eyebrow="Akute Beschwerden">
-<section class="section"><div class="narrow prose"><div class="notice"><strong>Akutsprechstunde:</strong> werktäglich um 08:00 Uhr, ausschließlich für akute Erkrankungen.</div><h2>Bei akutem Behandlungsbedarf</h2><p>Die Akutsprechstunde ist für plötzlich aufgetretene oder deutlich verschlechterte dermatologische Beschwerden vorgesehen. Planbare Anliegen und länger bestehende Beschwerden gehören in einen regulären Termin.</p><h2>Hausarztvermittlungsfall</h2><p>Wenn eine besonders kurzfristige fachärztliche Behandlung erforderlich ist, kann Ihr Hausarzt die Praxis im Rahmen eines Hausarztvermittlungsfalls kontaktieren und einen kurzfristigen Termin abstimmen.</p><p><a class="button" href={practice.phoneHref}>Praxis anrufen</a></p></div></section>
+<PageLayout title="Akutsprechstunde" description="Akute Hautprobleme in der Hautarztpraxis Kempen: wann OnlineDoctor reicht, wann Sie in die Akutsprechstunde kommen sollten und wann sofortige Hilfe nötig ist." eyebrow="Akute Beschwerden">
+<section class="section">
+  <div class="narrow prose">
+    <div class="notice"><strong>Akutsprechstunde:</strong> werktäglich um 08:00 Uhr, ausschließlich für akut aufgetretene oder deutlich verschlechterte Beschwerden.</div>
+    <h2>Muss das wirklich heute in der Praxis angesehen werden?</h2>
+    <p>Bei vielen sichtbaren Hautproblemen reicht zunächst eine gute Fotodokumentation. Wenn keine schwere Allgemeinsymptomatik besteht und Sie vor allem eine fachärztliche Einschätzung benötigen, kann die digitale Sprechstunde von Dr. Moritz Berkenkamp über OnlineDoctor der schnellere Weg sein.</p>
+    <p>Wenn Dr. Berkenkamp anhand der Bilder keine sichere Empfehlung geben kann oder eine Untersuchung notwendig ist, wird Ihnen das in der digitalen Rückmeldung mitgeteilt. So sollen persönliche Termine vor allem für die Fälle frei bleiben, bei denen Untersuchung, Diagnostik oder Behandlung vor Ort wirklich gebraucht werden.</p>
+  </div>
+</section>
+
+<section class="section acute-online-section">
+  <div class="container"><OnlineDoctorCard title="Für viele sichtbare Hautprobleme: zuerst OnlineDoctor" /></div>
+</section>
+
+<section class="section">
+  <div class="narrow prose">
+    <h2>Wann die Akutsprechstunde der richtige Weg ist</h2>
+    <p>Die Akutsprechstunde ist für plötzlich aufgetretene oder deutlich verschlechterte dermatologische Beschwerden vorgesehen, die zeitnah persönlich untersucht werden müssen. Dazu können zum Beispiel starke Entzündungen, schmerzhafte Abszesse oder Befunde gehören, bei denen eine Behandlung vor Ort wahrscheinlich notwendig ist.</p>
+
+    <h2>Was nicht in die Akutsprechstunde gehört</h2>
+    <p>Planbare Anliegen, seit längerer Zeit unveränderte Beschwerden, reguläre Hautkrebsvorsorge, ästhetische Beratung und Routinekontrollen gehören in einen normalen Termin. So können wir die begrenzten Akutplätze für tatsächlich dringliche Erkrankungen nutzen.</p>
+
+    <h2>Hausarztvermittlungsfall</h2>
+    <p>Wenn Ihr Hausarzt nach eigener Einschätzung eine besonders kurzfristige fachärztliche Behandlung für erforderlich hält, kann er die Praxis im Rahmen eines Hausarztvermittlungsfalls kontaktieren und einen zeitnahen Termin abstimmen.</p>
+
+    <h2>Bei einem echten Notfall</h2>
+    <p>Schwere allergische Reaktionen mit Atemnot oder Kreislaufproblemen, eine rasche schwere Verschlechterung des Allgemeinzustands oder andere medizinische Notfälle gehören nicht in die normale Akutsprechstunde. Nutzen Sie in solchen Situationen die Notfallversorgung.</p>
+
+    <p><a class="button" href={practice.phoneHref}>Praxis anrufen</a></p>
+  </div>
+</section>
 </PageLayout>

@@ -1,0 +1,30 @@
+---
+import { practice } from '../data/site';
+
+interface Props {
+  compact?: boolean;
+  title?: string;
+}
+
+const {
+  compact = false,
+  title = 'Hautproblem online von Dr. Berkenkamp einschätzen lassen'
+} = Astro.props;
+---
+<section class:list={['online-doctor-card', compact && 'online-doctor-card--compact']} aria-labelledby="online-doctor-title">
+  <div class="online-doctor-copy">
+    <p class="eyebrow">OnlineDoctor · Dr. med. Moritz Berkenkamp</p>
+    <h2 id="online-doctor-title">{title}</h2>
+    <p>Viele sichtbare Hautprobleme lassen sich zunächst anhand guter Fotos und einiger Angaben zum Verlauf beurteilen. Dr. Berkenkamp beantwortet solche Anfragen über OnlineDoctor. Wenn die Bilder nicht ausreichen oder eine Untersuchung in der Praxis nötig ist, wird das in der Rückmeldung entsprechend empfohlen.</p>
+    <div class="online-doctor-facts" aria-label="OnlineDoctor kurz erklärt">
+      <span>ohne Termin einreichbar</span>
+      <span>fachärztliche Rückmeldung</span>
+      <span>persönliche Vorstellung nur, wenn sie nötig ist</span>
+    </div>
+    <div class="hero-actions">
+      <a class="button" href={practice.onlineDoctor} target="_blank" rel="noopener noreferrer">Online-Hautcheck starten</a>
+      <a class="button ghost" href={practice.onlineDoctorInsurers} target="_blank" rel="noopener noreferrer">Kostenübernahme prüfen</a>
+    </div>
+    <p class="online-doctor-small">Viele gesetzliche Krankenkassen übernehmen den Online-Hautcheck. Privatversicherte erhalten eine GOÄ-Rechnung zur Einreichung bei ihrer Versicherung. Ob und in welchem Umfang die Kosten übernommen werden, prüfen Sie bitte beim Start der Anfrage beziehungsweise bei Ihrem Versicherer.</p>
+  </div>
+</section>

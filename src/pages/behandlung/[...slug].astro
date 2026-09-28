@@ -1,7 +1,9 @@
 ---
 import PageLayout from '../../layouts/PageLayout.astro';
+import OnlineDoctorCard from '../../components/OnlineDoctorCard.astro';
 import { services, practice } from '../../data/site';
 import { serviceContent } from '../../data/service-content';
+import { getServiceGuidance, canUseOnlineDoctor } from '../../data/service-guidance';
 
 export function getStaticPaths(){
   return services.map(service=>({params:{slug:service.slug},props:{service}}));
@@ -10,6 +12,9 @@ export function getStaticPaths(){
 const { service } = Astro.props;
 const content = serviceContent[service.slug];
 if (!content) throw new Error(`Missing final content for service: ${service.slug}`);
+
+const guidance = getServiceGuidance(service.category);
+const showOnlineDoctor = canUseOnlineDoctor(service.slug);
 
 const related = services
   .filter(item => item.category === service.category && item.slug !== service.slug)
@@ -38,6 +43,26 @@ const related = services
         {content.note && <div class="notice"><strong>Wichtig:</strong> {content.note}</div>}
         {content.billing && <div class="billing-note"><strong>Kosten:</strong> {content.billing}</div>}
 
+        {guidance && <section class="service-practical">
+          <p class="eyebrow">Praktisch für Ihren Termin</p>
+          <h2>{guidance.heading}</h2>
+          {guidance.paragraphs.map(paragraph => <p>{paragraph}</p>)}
+          {guidance.bullets && <ul class="check-list">{guidance.bullets.map(item => <li>{item}</li>)}</ul>}
+        </section>}
+
+        {showOnlineDoctor && <OnlineDoctorCard compact={true} title="Erst einmal online zeigen?" />}
+
+        {guidance?.faq?.length > 0 && <section class="service-faq">
+          <p class="eyebrow">Häufige Fragen</p>
+          <h2>Was Patienten zu diesem Bereich oft wissen möchten</h2>
+          <div class="faq-list">
+            {guidance.faq.map(item => <details class="faq-item">
+              <summary>{item.question}</summary>
+              <p>{item.answer}</p>
+            </details>)}
+          </div>
+        </section>}
+
         <section class="service-cta">
           <p class="eyebrow">Termin</p>
           <h2>Sie möchten den Befund abklären lassen?</h2>
@@ -55,6 +80,7 @@ const related = services
           <p><strong>{practice.phoneDisplay}</strong><br />{practice.street}<br />{practice.postalCode} {practice.city}</p>
           <p><a class="text-link" href="/kontakt-termine/">Kontakt & Anfahrt</a></p>
           <p><a class="text-link" href="/akutsprechstunde/">Akutsprechstunde</a></p>
+          {showOnlineDoctor && <p><a class="text-link" href={practice.onlineDoctor} target="_blank" rel="noopener noreferrer">OnlineDoctor mit Dr. Berkenkamp</a></p>}
         </div>
 
         {related.length > 0 && <div class="sidebar-related">
