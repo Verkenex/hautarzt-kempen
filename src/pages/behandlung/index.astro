@@ -1,8 +1,63 @@
 ---
 import PageLayout from '../../layouts/PageLayout.astro';
 import ContactBand from '../../components/ContactBand.astro';
-import { categories, services } from '../../data/site';
+import { services, serviceAreas } from '../../data/site';
+
+const categoryMap = {
+  'Dermatologie': 'Dermatologie',
+  'Allergologie': 'Allergologie',
+  'Phlebologie': 'Phlebologie',
+  'Proktologie': 'Proktologie',
+  'Ästhetische Dermatologie': 'Ästhetische Dermatologie'
+};
+
+const areaServices = (name: string) => services.filter(service => service.category === categoryMap[name as keyof typeof categoryMap]);
+const hrefForTitle = (title: string) => {
+  const service = services.find(item => item.title === title);
+  return service ? '/behandlung/' + service.slug + '/' : '/behandlung/';
+};
 ---
 <PageLayout title="Leistungen" description="Dermatologie, Allergologie, Phlebologie, Proktologie und ästhetische Dermatologie in der Hautarztpraxis Kempen." eyebrow="Behandlung">
-<section class="section"><div class="container">{categories.map(category => <section class="category-block"><p class="eyebrow">{category}</p><h2>{category}</h2><div class="link-list">{services.filter(s=>s.category===category).map(s=><a href={'/behandlung/'+s.slug+'/'}>{s.title}</a>)}</div></section>)}</div></section><ContactBand />
+<section class="section service-directory">
+  <div class="container">
+    <div class="directory-intro">
+      <p class="eyebrow">Orientierung</p>
+      <h2>Finden Sie schnell den passenden Fachbereich.</h2>
+      <p class="lead">Die Behandlungsschwerpunkte sind in fünf medizinische Bereiche gegliedert. Häufig gesuchte Themen erreichen Sie direkt; sämtliche Einzelleistungen finden Sie darunter vollständig aufgeführt.</p>
+    </div>
+
+    <div class="area-grid">
+      {serviceAreas.map((area, index) =>
+        <article class={'area-card' + (area.name === 'Ästhetische Dermatologie' ? ' area-card--accent' : '')}>
+          <span class="area-number">0{index + 1}</span>
+          <h3><a href={area.href}>{area.name}</a></h3>
+          <p>{area.description}</p>
+          <nav class="area-highlights" aria-label={'Häufige Themen in ' + area.name}>
+            {area.highlights.map(item => <a href={hrefForTitle(item)}>{item}</a>)}
+          </nav>
+          <a class="text-link" href={area.href}>Zum Fachbereich</a>
+        </article>
+      )}
+    </div>
+
+    <div class="all-services">
+      <div class="section-heading compact">
+        <div><p class="eyebrow">Vollständige Übersicht</p><h2>Alle Leistungen von A bis Z innerhalb der Fachbereiche.</h2></div>
+      </div>
+      <div class="service-accordions">
+        {serviceAreas.map(area => {
+          const items = areaServices(area.name);
+          return <details class="service-accordion">
+            <summary><span>{area.name}</span><small>{items.length} Themen</small></summary>
+            <div class="accordion-content">
+              <p>{area.description}</p>
+              <div class="link-list">{items.map(service => <a href={'/behandlung/' + service.slug + '/'}>{service.title}</a>)}</div>
+            </div>
+          </details>
+        })}
+      </div>
+    </div>
+  </div>
+</section>
+<ContactBand />
 </PageLayout>

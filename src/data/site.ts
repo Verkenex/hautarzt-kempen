@@ -28,6 +28,7 @@ export type Doctor = {
   href?: string;
   image?: string;
   imageAlt?: string;
+  imagePosition?: string;
   initials: string;
 };
 
@@ -39,6 +40,7 @@ export const doctors: Doctor[] = [
     href: '/team/dr-med-klaus-gerecht/',
     image: 'https://www.hautarzt-kempen.de/wp-content/uploads/2024/11/Klaus-Gerecht-1.webp',
     imageAlt: 'Dr. med. Klaus Gerecht',
+    imagePosition: 'center 22%',
     initials: 'KG'
   },
   {
@@ -47,6 +49,7 @@ export const doctors: Doctor[] = [
     details: 'Facharzt für Dermatologie',
     image: 'https://www.hautarzt-kempen.de/wp-content/uploads/2026/07/IMG_5015.jpeg-002.png',
     imageAlt: 'Dr. med. Moritz Berkenkamp',
+    imagePosition: 'center 20%',
     initials: 'MB'
   },
   {
@@ -55,6 +58,7 @@ export const doctors: Doctor[] = [
     details: 'Dermatologie',
     image: 'https://www.hautarzt-kempen.de/wp-content/uploads/2026/06/Frau_Dr_Hadjisoteriou_480x480.webp',
     imageAlt: 'Dr. (GR) Avgousta Hadjisoteriou',
+    imagePosition: 'center 20%',
     initials: 'AH'
   },
   {
@@ -122,3 +126,36 @@ export const services = [
   ...map(aesthetics, 'Ästhetische Dermatologie')
 ];
 export const categories = ['Dermatologie','Allergologie','Phlebologie','Proktologie','Ästhetische Dermatologie'];
+
+export const serviceAreas = [
+  {
+    name: 'Dermatologie',
+    href: '/behandlung/dermatologie/',
+    description: 'Hauterkrankungen, Hautkrebsvorsorge, operative Dermatologie und moderne Diagnostik.',
+    highlights: ['Hautkrebsvorsorge','Akne','Neurodermitis','Operative Dermatologie','Laserbehandlung']
+  },
+  {
+    name: 'Allergologie',
+    href: '/behandlung/allergologie/',
+    description: 'Diagnostik und Behandlung allergischer Erkrankungen von Haut und Atemwegen.',
+    highlights: ['Allergie','Heuschnupfen','Hyposensibilisierung']
+  },
+  {
+    name: 'Phlebologie',
+    href: '/behandlung/venenheilkunde-phlebologie/',
+    description: 'Diagnostik und Behandlung von Erkrankungen des Venensystems.',
+    highlights: ['Chronische venöse Insuffizienz','Tiefe Beinvenenthrombose','Postthrombotisches Syndrom']
+  },
+  {
+    name: 'Proktologie',
+    href: '/behandlung/proktologie/',
+    description: 'Diskrete fachärztliche Untersuchung und Behandlung proktologischer Beschwerden.',
+    highlights: ['Hämorrhoiden','Analfissuren','Analfisteln','Analekzem']
+  },
+  {
+    name: 'Ästhetische Dermatologie',
+    href: '/behandlung/aesthetische-dermatologie/',
+    description: 'Ärztlich verantwortete ästhetische Behandlung, Lasertherapie und medizinische Kosmetik.',
+    highlights: ['Faltenbehandlung','Laser-Haarentfernung','Medizinische Kosmetik','Skinbooster']
+  }
+] as const;
