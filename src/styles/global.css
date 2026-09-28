@@ -219,3 +219,29 @@ p{margin-top:0}
   .service-accordion summary small{display:none}
   .all-services{margin-top:64px}
 }
+
+
+/* Final service content */
+.service-prose>.lead{margin-bottom:48px}
+.service-section{padding:8px 0 12px}
+.service-section h2{margin:34px 0 17px}
+.service-section ul{margin:18px 0 22px;padding-left:20px;color:#493f40}
+.service-section li{margin:8px 0}
+.billing-note{margin:24px 0;padding:18px 20px;border:1px solid var(--line);border-radius:var(--radius);background:#fff;color:#514647}
+.service-cta{margin-top:64px;padding-top:38px;border-top:1px solid var(--line)}
+.service-cta h2{margin-top:0}
+.sidebar-related{margin-top:30px;padding-top:25px;border-top:1px solid var(--line)}
+.sidebar-related nav{display:grid}
+.sidebar-related a{padding:10px 0;border-bottom:1px solid var(--line);color:#504546;font-size:.86rem;text-decoration:none}
+.sidebar-related a:hover{color:var(--bordeaux)}
+.profile-intro{display:grid;grid-template-columns:minmax(320px,.78fr) minmax(0,1.22fr);gap:72px;align-items:center}
+.profile-photo{overflow:hidden;border-radius:var(--radius-lg);background:var(--paper-2)}
+.profile-photo img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center 20%}
+.profile-vita{background:var(--paper-2)}
+.profile-vita h3{margin:48px 0 14px;font-family:var(--sans);font-size:1rem;font-weight:750;letter-spacing:0}
+.vita-list{border-top:1px solid var(--line)}
+.vita-row{display:grid;grid-template-columns:130px 1fr;gap:24px;padding:15px 0;border-bottom:1px solid var(--line)}
+.vita-row time{color:var(--bordeaux);font-size:.82rem;font-weight:700}
+.vita-row p{margin:0;color:#493f40}
+@media(max-width:800px){.profile-intro{grid-template-columns:1fr;gap:34px}.profile-photo{max-width:520px}}
+@media(max-width:640px){.vita-row{grid-template-columns:1fr;gap:4px}.service-prose>.lead{margin-bottom:34px}}
