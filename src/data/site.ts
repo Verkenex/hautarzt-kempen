@@ -38,7 +38,7 @@ export const doctors: Doctor[] = [
     role: 'Ärztlicher Leiter',
     details: 'Facharzt für Haut- und Geschlechtskrankheiten · Phlebologie · Proktologie',
     href: '/team/dr-med-klaus-gerecht/',
-    image: 'https://www.hautarzt-kempen.de/wp-content/uploads/2024/11/Klaus-Gerecht-1.webp',
+    image: '/assets/team/klaus-gerecht.webp',
     imageAlt: 'Dr. med. Klaus Gerecht',
     imagePosition: 'center 22%',
     initials: 'KG'
@@ -47,7 +47,7 @@ export const doctors: Doctor[] = [
     name: 'Dr. med. Moritz Berkenkamp',
     role: 'Facharzt',
     details: 'Facharzt für Dermatologie',
-    image: 'https://www.hautarzt-kempen.de/wp-content/uploads/2026/07/IMG_5015.jpeg-002.png',
+    image: '/assets/team/moritz-berkenkamp.png',
     imageAlt: 'Dr. med. Moritz Berkenkamp',
     imagePosition: 'center 20%',
     initials: 'MB'
@@ -56,7 +56,7 @@ export const doctors: Doctor[] = [
     name: 'Dr. (GR) Avgousta Hadjisoteriou',
     role: 'Ärztin in Weiterbildung',
     details: 'Dermatologie',
-    image: 'https://www.hautarzt-kempen.de/wp-content/uploads/2026/06/Frau_Dr_Hadjisoteriou_480x480.webp',
+    image: '/assets/team/avgousta-hadjisoteriou.webp',
     imageAlt: 'Dr. (GR) Avgousta Hadjisoteriou',
     imagePosition: 'center 20%',
     initials: 'AH'

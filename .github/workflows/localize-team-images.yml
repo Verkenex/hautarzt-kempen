@@ -1,0 +1,38 @@
+name: Localize team images
+
+on:
+  push:
+    branches: [main]
+    paths-ignore:
+      - 'public/assets/team/**'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Download current practice portraits
+        run: |
+          set -euo pipefail
+          mkdir -p public/assets/team
+          curl -L --fail --retry 3 'https://www.hautarzt-kempen.de/wp-content/uploads/2024/11/Klaus-Gerecht-1.webp' -o public/assets/team/klaus-gerecht.webp
+          curl -L --fail --retry 3 'https://www.hautarzt-kempen.de/wp-content/uploads/2026/07/IMG_5015.jpeg-002.png' -o public/assets/team/moritz-berkenkamp.png
+          curl -L --fail --retry 3 'https://www.hautarzt-kempen.de/wp-content/uploads/2026/06/Frau_Dr_Hadjisoteriou_480x480.webp' -o public/assets/team/avgousta-hadjisoteriou.webp
+
+      - name: Commit localized portraits
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add public/assets/team
+          if git diff --cached --quiet; then
+            echo 'Team portraits already localized.'
+            exit 0
+          fi
+          git commit -m 'Localize current team portraits'
+          git push
