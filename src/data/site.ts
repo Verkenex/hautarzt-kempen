@@ -9,6 +9,7 @@ export const practice = {
   phoneHref: 'tel:+492152912220',
   fax: '+49 2152 9122220',
   email: 'post@hautarzt-kempen.de',
+  vatId: 'DE258062151',
   doctolib: 'https://www.doctolib.de/medizinisches-versorgungszentrum-mvz/kempen/hautaerztliches-mvz-kempen-gmbh',
   digitalRegistration: 'https://gonelly.de/o/coriuskempen/v2',
   onlineDoctor: 'https://www.onlinedoctor.de/de/doctors/d/dr-med-moritz-berkenkamp',
@@ -179,13 +180,10 @@ export const practiceTeam: PracticeTeamMember[] = [
   { name:'Marion Burgtorff', role:'Arzthelferin', image:'/assets/team/staff/marion-burgtorff.webp', imageAlt:'Marion Burgtorff' },
   { name:'Anastasia Barbuto', role:'Medizinische Fachangestellte', image:'/assets/team/staff/anastasia-barbuto.webp', imageAlt:'Anastasia Barbuto' },
   { name:'Kyra Holtmanns', role:'Auszubildende zur Medizinischen Fachangestellten', image:'/assets/team/staff/kyra-holtmanns.webp', imageAlt:'Kyra Holtmanns' },
-  { name:'Claudia Jansen', role:'Kosmetische Dermatologie · Medizinische Fußpflege', image:'/assets/team/staff/claudia-jansen.webp', imageAlt:'Claudia Jansen' },
   { name:'Elena Monrose', role:'Kosmetische Dermatologie · Medizinische Fußpflege', image:'/assets/team/staff/elena-monrose.webp', imageAlt:'Elena Monrose' },
-  { name:'Dajana Saurbier', role:'Kosmetische Dermatologie · Medizinische Fußpflege', image:'/assets/team/staff/dajana-saurbier.webp', imageAlt:'Dajana Saurbier' },
-  { name:'Lucyna Tomalczyk', role:'Kosmetische Fußpflege · Medizinische Fußpflege', image:'/assets/team/staff/lucyna-tomalczyk.webp', imageAlt:'Lucyna Tomalczyk' },
+  { name:'Dajana Reinecke', role:'Kosmetische Dermatologie · Medizinische Fußpflege', image:'/assets/team/staff/dajana-reinecke.webp', imageAlt:'Dajana Reinecke' },
   { name:'Rita Neuhoff', role:'Kauffrau im Gesundheitswesen', image:'/assets/team/staff/rita-neuhoff.webp', imageAlt:'Rita Neuhoff' },
-  { name:'Tanja Göttges', role:'MTLA', image:'/assets/team/staff/tanja-goettges.webp', imageAlt:'Tanja Göttges' },
-  { name:'Anja Rovkin', role:'Auszubildende zur Medizinischen Fachangestellten', image:'/assets/team/staff/anja-rovkin.webp', imageAlt:'Anja Rovkin' },
-  { name:'Max Gerecht', role:'Praxishilfe', image:'/assets/team/staff/max-gerecht.webp', imageAlt:'Max Gerecht' },
+  { name:'Anja Gerecht-Rovkin', role:'Auszubildende zur Medizinischen Fachangestellten', image:'/assets/team/staff/anja-gerecht-rovkin.webp', imageAlt:'Anja Gerecht-Rovkin' },
+  { name:'Max Gerecht-Rovkin', role:'Praxishilfe', image:'/assets/team/staff/max-gerecht-rovkin.webp', imageAlt:'Max Gerecht-Rovkin' }
   { name:'Michael Liebelt', role:'Facility Manager', image:'/assets/team/staff/michael-liebelt.webp', imageAlt:'Michael Liebelt' }
 ];

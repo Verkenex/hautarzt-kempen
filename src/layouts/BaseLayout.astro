@@ -29,6 +29,8 @@ const schema = {
   url:'https://www.hautarzt-kempen.de/',
   telephone:'+492152912220',
   email:practice.email,
+  vatID:practice.vatId,
+  parentOrganization:{'@type':'Organization',name:'Corius Deutschland GmbH',url:'https://www.corius.de/'},
   address:{'@type':'PostalAddress',streetAddress:practice.street,postalCode:practice.postalCode,addressLocality:practice.city,addressCountry:'DE'},
   medicalSpecialty:'Dermatology',
   openingHoursSpecification

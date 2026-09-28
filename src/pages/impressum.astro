@@ -4,7 +4,7 @@ import { practice } from '../data/site';
 ---
 <PageLayout title="Impressum" description="Anbieterkennzeichnung der MVZ Corius Kempen GmbH." eyebrow="Rechtliches">
 <section class="section"><div class="narrow prose legal-page">
-  <div class="notice"><strong>Für die finale Freigabe fehlen noch:</strong> Umsatzsteuer-Identifikationsnummer, sofern vorhanden, sowie Angaben zur Berufshaftpflichtversicherung. Alle übrigen Angaben sind für den Launch vorbereitet.</div>
+  <div class="notice"><strong>Vor dem Launch noch einmal aus der Versicherungspolice prüfen:</strong> den exakten räumlichen Geltungsbereich der Berufshaftpflichtversicherung.</div>
 
   <h2>Angaben gemäß § 5 DDG</h2>
   <p><strong>{practice.legalName}</strong><br />{practice.street}<br />{practice.postalCode} {practice.city}</p>
@@ -15,6 +15,9 @@ import { practice } from '../data/site';
 
   <h2>Handelsregister</h2>
   <p>Amtsgericht Krefeld<br />HRB 17980</p>
+
+  <h2>Umsatzsteuer-Identifikationsnummer</h2>
+  <p>{practice.vatId}</p>
 
   <h2>Ärztliche Leitung</h2>
   <p>Dr. med. Klaus Gerecht</p>
@@ -42,11 +45,29 @@ import { practice } from '../data/site';
     <a href="https://www.aekno.de/aerzte/rechtsgrundlagen/heilberufsgesetz-nrw" target="_blank" rel="noopener noreferrer">Heilberufsgesetz NRW</a>
   </p>
 
+  <h2>Berufshaftpflichtversicherung</h2>
+  <p><strong>HDI Versicherung AG</strong><br />
+    HDI-Platz 1<br />
+    30659 Hannover
+  </p>
+  <p class="muted">Die frühere HDI-Gerling Firmen und Privat Versicherung AG ist 2012 in der heutigen HDI Versicherung AG aufgegangen. Der räumliche Geltungsbereich wird vor Veröffentlichung noch einmal exakt aus dem Versicherungsnachweis übernommen.</p>
+
   <h2>Inhaltlich verantwortlich</h2>
   <p>Dr. med. Klaus Gerecht<br />Anschrift wie oben.</p>
 
-  <h2>Gruppenzugehörigkeit</h2>
-  <p>Die MVZ Corius Kempen GmbH ist Teil der CORIUS Gruppe. Die ärztliche Leitung des Standorts liegt bei Dr. med. Klaus Gerecht.</p>
+  <h2>Muttergesellschaft / Gruppenzugehörigkeit</h2>
+  <p><strong>Corius Deutschland GmbH</strong><br />
+    Karlstraße 60<br />
+    80333 München<br />
+    Telefon: +49 89 588043250<br />
+    E-Mail: <a href="mailto:info@corius.de">info@corius.de</a><br />
+    <a href="https://www.corius.de/" target="_blank" rel="noopener noreferrer">www.corius.de</a>
+  </p>
+  <p>Geschäftsführung: Hajo Remmers, Heidi Niemöller<br />
+    Amtsgericht München · HRB 250888<br />
+    Umsatzsteuer-ID: DE312577602
+  </p>
+  <p>Die Corius Deutschland GmbH ist Muttergesellschaft beziehungsweise Teil der Gruppenzugehörigkeit; Diensteanbieter dieser Website ist die MVZ Corius Kempen GmbH.</p>
 
   <h2>Externe Links</h2>
   <p>Diese Website enthält Links zu externen Angeboten, insbesondere Doctolib, OnlineDoctor und der digitalen Patientenanmeldung. Für deren Inhalte und Datenverarbeitung sind die jeweiligen Anbieter verantwortlich.</p>
