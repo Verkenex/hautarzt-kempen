@@ -6,7 +6,7 @@ import { practice } from '../data/site';
 <section class="section"><div class="narrow prose legal-page">
   <h2>Angaben gemäß § 5 DDG</h2>
   <p><strong>{practice.legalName}</strong><br />{practice.street}<br />{practice.postalCode} {practice.city}</p>
-  <p>Telefon: +49 2152 912220<br />E-Mail: <a href={'mailto:' + practice.email}>{practice.email}</a></p>
+  <p>Telefon: +49 2152 912220<br />E-Mail: <a href={practice.emailHref}>{practice.email}</a></p>
 
   <h2>Vertretungsberechtigte Geschäftsführer</h2>
   <p>Dr. med. Klaus Gerecht<br />Heidi Niemöller<br />Jan Zeiler</p>

@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
+Disallow: /intern/
+Disallow: /go/
+Disallow: /_analytics/
 
 Sitemap: https://www.hautarzt-kempen.de/sitemap-index.xml

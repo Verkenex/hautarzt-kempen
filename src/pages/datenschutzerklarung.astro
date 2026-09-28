@@ -6,11 +6,11 @@ import { practice } from '../data/site';
 <section class="section"><div class="narrow prose legal-page">
   <h2>Verantwortlicher</h2>
   <p><strong>{practice.legalName}</strong><br />{practice.street}<br />{practice.postalCode} {practice.city}<br />
-  Telefon: +49 2152 912220<br />E-Mail: <a href={'mailto:' + practice.email}>{practice.email}</a></p>
+  Telefon: +49 2152 912220<br />E-Mail: <a href={practice.emailHref}>{practice.email}</a></p>
 
   <h2>Datenschutzkontakt am Standort</h2>
   <p><strong>Barbara Gerecht</strong><br />MVZ Corius Kempen GmbH<br />Anschrift wie oben<br />
-  E-Mail: <a href={'mailto:' + practice.email}>{practice.email}</a></p>
+  E-Mail: <a href={practice.emailHref}>{practice.email}</a></p>
   <p>Datenschutzanliegen können direkt an Frau Gerecht gerichtet werden.</p>
 
   <h2>Datenschutz bei der CORIUS Deutschland GmbH</h2>
@@ -22,6 +22,12 @@ import { practice } from '../data/site';
 
   <h2>Server-Logfiles</h2>
   <p>Beim Aufruf der Website verarbeitet der Hostinganbieter technisch erforderliche Verbindungsdaten, insbesondere IP-Adresse, Zeitpunkt des Abrufs, aufgerufene Ressource, Referrer sowie Browser- und Systeminformationen. Die Verarbeitung dient dem sicheren und stabilen Betrieb der Website. Die Daten werden nur so lange gespeichert, wie dies für Betrieb, Sicherheit und die Erfüllung gesetzlicher Pflichten erforderlich ist.</p>
+
+  <h2>Interne Reichweitenmessung</h2>
+  <p>Zur Verbesserung der Website und der Patientensteuerung werten wir ausschließlich auf unserer eigenen Hosting-Infrastruktur statistische Nutzungsdaten aus. Grundlage sind die technischen Server-Logfiles sowie Klicks auf bestimmte Funktionslinks, zum Beispiel Terminbuchung, OnlineDoctor, E-Mail, Telefon, Routenplanung und digitale Patientenanmeldung.</p>
+  <p>In der internen Statistik speichern wir insbesondere Datum, aufgerufenen Seitenpfad, die Art eines Funktionsklicks, dessen Ursprungsseite sowie externe Verweisquellen. Suchbegriffe werden nur erfasst, soweit eine Suchmaschine diese im Referrer tatsächlich übermittelt. Inhalte von E-Mails, Telefonaten, Anmeldungen oder externen Buchungen werden nicht erfasst.</p>
+  <p>Wir verwenden hierfür keine Cookies, keinen LocalStorage, keine Werbe- oder Gerätekennungen, kein Fingerprinting und keine externen Analytics-Dienste. IP-Adressen werden nicht in der Statistikdatenbank gespeichert. Für die Ermittlung der täglichen Besucherzahl wird die IP-Adresse während der serverseitigen Logauswertung zusammen mit dem User-Agent in einen tagesgebundenen, nicht über Tage hinweg verwendbaren Prüfwert umgewandelt. Diese temporären Prüfwerte werden spätestens nach 31 Tagen gelöscht. Aggregierte Statistik- und Klickdaten werden spätestens nach 24 Monaten gelöscht.</p>
+  <p>Die Verarbeitung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO. Unser berechtigtes Interesse liegt in der technisch und organisatorisch sparsamen Messung der Website-Nutzung, der Verbesserung der Auffindbarkeit wichtiger Informationen und der Optimierung der digitalen Patientenwege.</p>
 
   <h2>Externe Dienste</h2>
   <p>Wenn Sie Doctolib, OnlineDoctor oder die digitale Patientenanmeldung öffnen, verlassen Sie diese Website. Die externen Angebote werden erst durch Ihren Klick aufgerufen. Ab diesem Zeitpunkt gelten die Datenschutzbestimmungen des jeweiligen Anbieters.</p>
