@@ -1,3 +1,7 @@
+const productionActions = import.meta.env.PROD;
+
+const actionHref = (tracked: string, direct: string) => productionActions ? tracked : direct;
+
 export const practice = {
   name: 'MVZ Corius Kempen GmbH',
   legalName: 'MVZ Corius Kempen GmbH',
@@ -6,16 +10,16 @@ export const practice = {
   postalCode: '47906',
   city: 'Kempen',
   phoneDisplay: '02152 912220',
-  phoneHref: '/go/telefon/',
+  phoneHref: actionHref('/go/telefon/', 'tel:+492152912220'),
   fax: '+49 2152 9122220',
   email: 'post@hautarzt-kempen.de',
-  emailHref: '/go/email/',
+  emailHref: actionHref('/go/email/', 'mailto:post@hautarzt-kempen.de'),
   vatId: 'DE258062151',
-  doctolib: '/go/termin/',
-  digitalRegistration: '/go/anmeldung/',
-  onlineDoctor: '/go/onlinedoctor/',
-  onlineDoctorInsurers: '/go/onlinedoctor-kosten/',
-  directions: '/go/route/',
+  doctolib: actionHref('/go/termin/', 'https://www.doctolib.de/medizinisches-versorgungszentrum-mvz/kempen/hautaerztliches-mvz-kempen-gmbh'),
+  digitalRegistration: actionHref('/go/anmeldung/', 'https://gonelly.de/o/coriuskempen/v2'),
+  onlineDoctor: actionHref('/go/onlinedoctor/', 'https://www.onlinedoctor.de/de/doctors/d/dr-med-moritz-berkenkamp'),
+  onlineDoctorInsurers: actionHref('/go/onlinedoctor-kosten/', 'https://www.onlinedoctor.de/partnerversicherungen/'),
+  directions: actionHref('/go/route/', 'https://www.google.com/maps/search/?api=1&query=St.%20Huberter%20Stra%C3%9Fe%2025%2C%2047906%20Kempen'),
   hours: [
     ['Montag', '08:00–12:00', '15:00–18:00'],
     ['Dienstag', '08:00–12:00', '15:00–19:00'],
