@@ -20,10 +20,10 @@ export const aestheticContent = {
     ]
   ),
   'aesthetische-dermatologie/faltenbehandlung': page(
-    'Bei einer Faltenbehandlung geht es nicht darum, jedes Zeichen des Älterwerdens verschwinden zu lassen. Entscheidend ist, welche Veränderung Sie selbst stört und ob sie sich mit einer zurückhaltenden Behandlung sinnvoll beeinflussen lässt.',
+    'Bei einer Faltenbehandlung geht es nicht darum, jedes Zeichen des Älterwerdens verschwinden zu lassen. Wir behandeln in Kempen mit Botulinumtoxin – häufig unter dem Namen Botox gesucht – und mit Hyaluronsäure. Welche Methode passt, hängt davon ab, was Sie tatsächlich stört.',
     [
       {
-        heading: 'Botulinumtoxin oder Hyaluronsäure?',
+        heading: 'Botulinumtoxin (Botox) oder Hyaluronsäure?',
         paragraphs: ['Mimische Falten entstehen vor allem durch die Aktivität der Gesichtsmuskulatur. Hier kann Botulinumtoxin die betreffende Muskulatur gezielt entspannen. Hyaluronsäure wird dagegen eingesetzt, wenn Volumen fehlt oder einzelne Falten und Konturen aufgefüllt beziehungsweise ausgeglichen werden sollen.', 'Welche Methode passt, lässt sich erst nach Untersuchung von Gesicht, Haut und Mimik beurteilen. Häufig ist weniger Behandlung sinnvoller als eine möglichst starke Veränderung.']
       },
       {
