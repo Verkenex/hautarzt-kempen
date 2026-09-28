@@ -22,6 +22,12 @@ const leadDoctor = doctors[0];
 const dermatology = serviceAreas[0];
 const aestheticArea = serviceAreas[4];
 const specialties = serviceAreas.slice(1,4);
+
+const reviewVoices = [
+  { quote: 'Hier lohnt jede Minute Wartezeit.', meta: 'Google-Bewertung · Juni 2026' },
+  { quote: 'ganz für den Patienten da', meta: 'Google-Bewertung · Juli 2026' },
+  { quote: 'Professionelles, kompetentes und freundliches Praxisteam.', meta: 'Google-Bewertung · Juni 2026' }
+];
 ---
 <BaseLayout title="Hautarzt Kempen | MVZ Corius Kempen GmbH" description="Hautarztpraxis in Kempen: Dermatologie, Hautkrebsvorsorge, ambulante Operationen, Allergologie, Phlebologie, Proktologie und ästhetische Dermatologie.">
 <section class="hero">
@@ -114,7 +120,7 @@ const specialties = serviceAreas.slice(1,4);
     <div>
       <p class="eyebrow">Ärztliche Leitung</p>
       <h2>Seit mehr als 30 Jahren Hautarzt in Kempen.</h2>
-      <p class="lead">Dr. Klaus Gerecht gründete seine Praxis 1994 in Kempen. Viele Patientinnen und Patienten kennt er seit Jahren oder inzwischen über mehrere Generationen. Heute arbeitet er gemeinsam mit Dr. Moritz Berkenkamp und zwei Ärzten in Weiterbildung am selben dermatologischen Standort.</p>
+      <p class="lead">Dr. Klaus Gerecht gründete seine Praxis 1994 in Kempen. Viele Patientinnen und Patienten kennt er seit Jahren oder inzwischen über mehrere Generationen. Heute arbeitet er gemeinsam mit Dr. Moritz Berkenkamp und zwei Ärzten in Weiterbildung in der Hautarztpraxis an der St. Huberter Straße.</p>
       <div class="fact-row">
         <div><strong>Dermatologie</strong><span>Haut- und Geschlechtskrankheiten</span></div>
         <div><strong>Zusatzgebiete</strong><span>Phlebologie · Proktologie</span></div>
@@ -142,6 +148,25 @@ const specialties = serviceAreas.slice(1,4);
         </article>
       )}
     </div>
+  </div>
+</section>
+
+<section class="reviews-section section" aria-labelledby="reviews-title">
+  <div class="container">
+    <div class="reviews-heading">
+      <p class="eyebrow">Patientenerfahrungen</p>
+      <h2 id="reviews-title">Was Patienten besonders hervorheben.</h2>
+      <p>Ausgewählte kurze Ausschnitte aus öffentlich abgegebenen Google-Bewertungen. Bewusst ohne externes Bewertungswidget und ohne künstliche Sterne-Inszenierung.</p>
+    </div>
+    <div class="review-grid">
+      {reviewVoices.map((review, index) =>
+        <figure class:list={['review-quote', index === 0 && 'review-quote--feature']}>
+          <blockquote>„{review.quote}“</blockquote>
+          <figcaption>{review.meta}</figcaption>
+        </figure>
+      )}
+    </div>
+    <p class="reviews-note">Die Auswahl zeigt einzelne persönliche Erfahrungen und ist naturgemäß nicht repräsentativ für jeden Praxisbesuch.</p>
   </div>
 </section>
 
