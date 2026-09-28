@@ -17,22 +17,32 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Download current practice portraits
+      - name: Install image tools
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq imagemagick
+
+      - name: Download and optimize current practice portraits
         run: |
           set -euo pipefail
-          mkdir -p public/assets/team
-          curl -L --fail --retry 3 'https://www.hautarzt-kempen.de/wp-content/uploads/2024/11/Klaus-Gerecht-1.webp' -o public/assets/team/klaus-gerecht.webp
-          curl -L --fail --retry 3 'https://www.hautarzt-kempen.de/wp-content/uploads/2026/07/IMG_5015.jpeg-002.png' -o public/assets/team/moritz-berkenkamp.png
-          curl -L --fail --retry 3 'https://www.hautarzt-kempen.de/wp-content/uploads/2026/06/Frau_Dr_Hadjisoteriou_480x480.webp' -o public/assets/team/avgousta-hadjisoteriou.webp
+          mkdir -p public/assets/team /tmp/team
+          curl -L --fail --retry 3 'https://www.hautarzt-kempen.de/wp-content/uploads/2024/11/Klaus-Gerecht-1.webp' -o /tmp/team/klaus.webp
+          curl -L --fail --retry 3 'https://www.hautarzt-kempen.de/wp-content/uploads/2026/07/IMG_5015.jpeg-002.png' -o /tmp/team/berkenkamp.png
+          curl -L --fail --retry 3 'https://www.hautarzt-kempen.de/wp-content/uploads/2026/06/Frau_Dr_Hadjisoteriou_480x480.webp' -o /tmp/team/hadjisoteriou.webp
+
+          convert /tmp/team/klaus.webp -auto-orient -resize '1000x1250>' -strip -quality 82 public/assets/team/klaus-gerecht.webp
+          convert /tmp/team/berkenkamp.png -auto-orient -resize '1000x1250>' -strip -quality 82 public/assets/team/moritz-berkenkamp.webp
+          convert /tmp/team/hadjisoteriou.webp -auto-orient -resize '1000x1250>' -strip -quality 82 public/assets/team/avgousta-hadjisoteriou.webp
+          rm -f public/assets/team/moritz-berkenkamp.png
 
       - name: Commit localized portraits
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add public/assets/team
+          git add -A public/assets/team
           if git diff --cached --quiet; then
-            echo 'Team portraits already localized.'
+            echo 'Team portraits already localized and optimized.'
             exit 0
           fi
-          git commit -m 'Localize current team portraits'
+          git commit -m 'Optimize local team portraits'
           git push
