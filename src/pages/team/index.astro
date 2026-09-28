@@ -1,10 +1,10 @@
 ---
 import PageLayout from '../../layouts/PageLayout.astro';
 import ContactBand from '../../components/ContactBand.astro';
-import { doctors } from '../../data/site';
+import { doctors, practiceTeam } from '../../data/site';
 ---
-<PageLayout title="Ärzteteam" description="Das Ärzteteam der MVZ Corius Kempen GmbH unter der ärztlichen Leitung von Dr. med. Klaus Gerecht." eyebrow="Team">
-  <section class="section">
+<PageLayout title="Ärzteteam" description="Das Ärzteteam und Praxisteam der MVZ Corius Kempen GmbH unter der ärztlichen Leitung von Dr. med. Klaus Gerecht." eyebrow="Team">
+  <section class="section team-doctors">
     <div class="container">
       <div class="team-intro">
         <p class="lead">Dr. Klaus Gerecht arbeitet seit 1994 als Hautarzt in Kempen. Heute besteht das Ärzteteam aus ihm, Dr. Moritz Berkenkamp sowie Dr. Avgousta Hadjisoteriou und Orhan Emre Avsar in Weiterbildung.</p>
@@ -23,5 +23,31 @@ import { doctors } from '../../data/site';
       </div>
     </div>
   </section>
+
+  <section class="section practice-team-section">
+    <div class="container">
+      <div class="section-heading practice-team-heading">
+        <div>
+          <p class="eyebrow">Praxisteam</p>
+          <h2>Die Menschen hinter dem Praxisalltag.</h2>
+          <p class="lead">Von Anmeldung und Assistenz über Allergologie, Labor und Hygiene bis zur medizinischen Kosmetik und Fußpflege: Der Praxisbetrieb funktioniert nur als Team.</p>
+        </div>
+      </div>
+      <div class="practice-team-grid">
+        {practiceTeam.map(member =>
+          <article class="practice-team-card">
+            <div class="practice-team-media">
+              <img src={member.image} width="600" height="600" alt={member.imageAlt} style={'object-position:' + (member.imagePosition || 'center 20%')} loading="lazy" />
+            </div>
+            <div class="practice-team-body">
+              <h3>{member.name}</h3>
+              <p>{member.role}</p>
+            </div>
+          </article>
+        )}
+      </div>
+    </div>
+  </section>
+
   <ContactBand />
 </PageLayout>

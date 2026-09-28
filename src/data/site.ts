@@ -161,3 +161,31 @@ export const serviceAreas = [
     highlights: ['Faltenbehandlung','Laser-Haarentfernung','Medizinische Kosmetik','Skinbooster']
   }
 ] as const;
+
+
+export type PracticeTeamMember = {
+  name: string;
+  role: string;
+  image: string;
+  imageAlt: string;
+  imagePosition?: string;
+};
+
+export const practiceTeam: PracticeTeamMember[] = [
+  { name:'Barbara Gerecht', role:'Praxismanagerin · Allergologische Fachassistentin · Arzthelferin', image:'/assets/team/staff/barbara-gerecht.webp', imageAlt:'Barbara Gerecht' },
+  { name:'Stephanie Worien', role:'Medizinische Fachangestellte · Fachwirtin · Hygienebeauftragte', image:'/assets/team/staff/stephanie-worien.webp', imageAlt:'Stephanie Worien' },
+  { name:'Carola Zangs', role:'Arzthelferin', image:'/assets/team/staff/carola-zangs.webp', imageAlt:'Carola Zangs' },
+  { name:'Jenny Nitzer', role:'Medizinische Fachangestellte · Fachwirtin · Hygienebeauftragte', image:'/assets/team/staff/jenny-nitzer.webp', imageAlt:'Jenny Nitzer' },
+  { name:'Marion Burgtorff', role:'Arzthelferin', image:'/assets/team/staff/marion-burgtorff.webp', imageAlt:'Marion Burgtorff' },
+  { name:'Anastasia Barbuto', role:'Medizinische Fachangestellte', image:'/assets/team/staff/anastasia-barbuto.webp', imageAlt:'Anastasia Barbuto' },
+  { name:'Kyra Holtmanns', role:'Auszubildende zur Medizinischen Fachangestellten', image:'/assets/team/staff/kyra-holtmanns.webp', imageAlt:'Kyra Holtmanns' },
+  { name:'Claudia Jansen', role:'Kosmetische Dermatologie · Medizinische Fußpflege', image:'/assets/team/staff/claudia-jansen.webp', imageAlt:'Claudia Jansen' },
+  { name:'Elena Monrose', role:'Kosmetische Dermatologie · Medizinische Fußpflege', image:'/assets/team/staff/elena-monrose.webp', imageAlt:'Elena Monrose' },
+  { name:'Dajana Saurbier', role:'Kosmetische Dermatologie · Medizinische Fußpflege', image:'/assets/team/staff/dajana-saurbier.webp', imageAlt:'Dajana Saurbier' },
+  { name:'Lucyna Tomalczyk', role:'Kosmetische Fußpflege · Medizinische Fußpflege', image:'/assets/team/staff/lucyna-tomalczyk.webp', imageAlt:'Lucyna Tomalczyk' },
+  { name:'Rita Neuhoff', role:'Kauffrau im Gesundheitswesen', image:'/assets/team/staff/rita-neuhoff.webp', imageAlt:'Rita Neuhoff' },
+  { name:'Tanja Göttges', role:'MTLA', image:'/assets/team/staff/tanja-goettges.webp', imageAlt:'Tanja Göttges' },
+  { name:'Anja Rovkin', role:'Auszubildende zur Medizinischen Fachangestellten', image:'/assets/team/staff/anja-rovkin.webp', imageAlt:'Anja Rovkin' },
+  { name:'Max Gerecht', role:'Praxishilfe', image:'/assets/team/staff/max-gerecht.webp', imageAlt:'Max Gerecht' },
+  { name:'Michael Liebelt', role:'Facility Manager', image:'/assets/team/staff/michael-liebelt.webp', imageAlt:'Michael Liebelt' }
+];
