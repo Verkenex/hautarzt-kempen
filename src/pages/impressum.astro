@@ -3,14 +3,52 @@ import PageLayout from '../layouts/PageLayout.astro';
 import { practice } from '../data/site';
 ---
 <PageLayout title="Impressum" description="Anbieterkennzeichnung der MVZ Corius Kempen GmbH." eyebrow="Rechtliches">
-<section class="section"><div class="narrow prose">
-  <div class="notice"><strong>Vor Launch final verifizieren:</strong> Firmierung, Registerdaten und Vertretungsberechtigte werden unmittelbar vor Veröffentlichung nochmals gegen einen aktuellen Registerstand geprüft.</div>
-  <h2>Angaben zum Anbieter</h2>
+<section class="section"><div class="narrow prose legal-page">
+  <div class="notice"><strong>Für die finale Freigabe fehlen noch:</strong> Umsatzsteuer-Identifikationsnummer, sofern vorhanden, sowie Angaben zur Berufshaftpflichtversicherung. Alle übrigen Angaben sind für den Launch vorbereitet.</div>
+
+  <h2>Angaben gemäß § 5 DDG</h2>
   <p><strong>{practice.legalName}</strong><br />{practice.street}<br />{practice.postalCode} {practice.city}</p>
-  <p>Telefon: +49 2152 912220<br />E-Mail: {practice.email}</p>
-  <h2>Handelsregister</h2><p>Amtsgericht Krefeld · HRB 17980</p>
-  <h2>Ärztliche Leitung</h2><p>Dr. med. Klaus Gerecht</p>
-  <h2>Inhaltlich verantwortlich</h2><p>Dr. med. Klaus Gerecht</p>
-  <h2>Gruppenzugehörigkeit</h2><p>Die MVZ Corius Kempen GmbH ist Teil der CORIUS Gruppe.</p>
+  <p>Telefon: +49 2152 912220<br />E-Mail: <a href={'mailto:' + practice.email}>{practice.email}</a></p>
+
+  <h2>Vertretungsberechtigte Geschäftsführer</h2>
+  <p>Dr. med. Klaus Gerecht<br />Heidi Niemöller<br />Jan Zeiler</p>
+
+  <h2>Handelsregister</h2>
+  <p>Amtsgericht Krefeld<br />HRB 17980</p>
+
+  <h2>Ärztliche Leitung</h2>
+  <p>Dr. med. Klaus Gerecht</p>
+
+  <h2>Berufsrechtliche Angaben</h2>
+  <p><strong>Zuständige Ärztekammer</strong><br />
+    Ärztekammer Nordrhein<br />
+    Tersteegenstraße 9<br />
+    40474 Düsseldorf<br />
+    <a href="https://www.aekno.de/" target="_blank" rel="noopener noreferrer">www.aekno.de</a>
+  </p>
+  <p><strong>Zuständige Kassenärztliche Vereinigung</strong><br />
+    Kassenärztliche Vereinigung Nordrhein<br />
+    Tersteegenstraße 9<br />
+    40474 Düsseldorf<br />
+    <a href="https://www.kvno.de/" target="_blank" rel="noopener noreferrer">www.kvno.de</a>
+  </p>
+  <p><strong>Berufsbezeichnung</strong><br />
+    Arzt / Facharzt für Haut- und Geschlechtskrankheiten<br />
+    verliehen in der Bundesrepublik Deutschland
+  </p>
+  <p><strong>Berufsrechtliche Regelungen</strong><br />
+    Berufsordnung für die nordrheinischen Ärztinnen und Ärzte sowie Heilberufsgesetz Nordrhein-Westfalen.<br />
+    <a href="https://www.aekno.de/aerzte/berufsordnung/" target="_blank" rel="noopener noreferrer">Berufsordnung der Ärztekammer Nordrhein</a><br />
+    <a href="https://www.aekno.de/aerzte/rechtsgrundlagen/heilberufsgesetz-nrw" target="_blank" rel="noopener noreferrer">Heilberufsgesetz NRW</a>
+  </p>
+
+  <h2>Inhaltlich verantwortlich</h2>
+  <p>Dr. med. Klaus Gerecht<br />Anschrift wie oben.</p>
+
+  <h2>Gruppenzugehörigkeit</h2>
+  <p>Die MVZ Corius Kempen GmbH ist Teil der CORIUS Gruppe. Die ärztliche Leitung des Standorts liegt bei Dr. med. Klaus Gerecht.</p>
+
+  <h2>Externe Links</h2>
+  <p>Diese Website enthält Links zu externen Angeboten, insbesondere Doctolib, OnlineDoctor und der digitalen Patientenanmeldung. Für deren Inhalte und Datenverarbeitung sind die jeweiligen Anbieter verantwortlich.</p>
 </div></section>
 </PageLayout>
