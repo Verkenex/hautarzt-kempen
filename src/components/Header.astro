@@ -20,10 +20,26 @@ import { practice } from '../data/site';
 <script is:inline>
   const toggle = document.querySelector('.menu-toggle');
   const nav = document.querySelector('#main-nav');
-  if (toggle && nav) toggle.addEventListener('click', () => {
-    const open = toggle.getAttribute('aria-expanded') === 'true';
-    toggle.setAttribute('aria-expanded', String(!open));
-    toggle.setAttribute('aria-label', open ? 'Menü öffnen' : 'Menü schließen');
-    nav.classList.toggle('is-open', !open);
-  });
+
+  const setMenu = (open) => {
+    if (!toggle || !nav) return;
+    toggle.setAttribute('aria-expanded', String(open));
+    toggle.setAttribute('aria-label', open ? 'Menü schließen' : 'Menü öffnen');
+    nav.classList.toggle('is-open', open);
+    document.body.classList.toggle('menu-open', open);
+  };
+
+  if (toggle && nav) {
+    toggle.addEventListener('click', () => setMenu(toggle.getAttribute('aria-expanded') !== 'true'));
+    nav.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => setMenu(false)));
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') {
+        setMenu(false);
+        toggle.focus();
+      }
+    });
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 900) setMenu(false);
+    });
+  }
 </script>
