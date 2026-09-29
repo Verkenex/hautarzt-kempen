@@ -56,8 +56,10 @@ const schema = {
   <Header />
   <main><slot /></main>
   <Footer />
-  <div class="mobile-actions" aria-label="Schnellzugriff">
-    <a href={practice.doctolib} target="_blank" rel="noopener noreferrer">Termin</a><a href={practice.phoneHref}>Anrufen</a>
-  </div>
+  <nav class="mobile-actions" aria-label="Schnellzugriff">
+    <a href={practice.doctolib} target="_blank" rel="noopener noreferrer">Termin</a>
+    <a href="/akutsprechstunde/">Akut</a>
+    <a href={practice.phoneHref}>Anrufen</a>
+  </nav>
 </body>
 </html>
