@@ -74,7 +74,7 @@ export const serviceSupplements: Record<string, ContentSection[]> = {
     {
       heading: 'Ambulante Operationen ausschließlich in Lokalanästhesie',
       paragraphs: [
-        'Alle operativen Eingriffe unserer Praxis werden ambulant in örtlicher Betäubung durchgeführt. Wir beschäftigen seit Jahren keinen Anästhesisten und führen keine Eingriffe in Vollnarkose durch. Die Lokalanästhesie wird gezielt in das Operationsgebiet eingebracht; nach Eintritt der Wirkung sollte der eigentliche Eingriff nicht schmerzhaft sein. Druck, Zug oder Berührung können dabei weiterhin wahrgenommen werden.',
+        'Alle operativen Eingriffe unserer Praxis werden ambulant in örtlicher Betäubung durchgeführt; Eingriffe in Vollnarkose bieten wir nicht an. Die Lokalanästhesie wird gezielt in das Operationsgebiet eingebracht; nach Eintritt der Wirkung sollte der eigentliche Eingriff nicht schmerzhaft sein. Druck, Zug oder Berührung können dabei weiterhin wahrgenommen werden.',
         'Vor dem Eingriff werden Diagnose, Operationsverfahren, mögliche Alternativen, Blutungs- und Wundheilungsrisiken sowie die zu erwartende Narbenbildung besprochen. Medikamente – insbesondere gerinnungshemmende Präparate – dürfen nicht eigenständig abgesetzt werden; ob eine Anpassung erforderlich ist, wird individuell geklärt.'
       ]
     },
