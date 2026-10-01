@@ -95,7 +95,7 @@ export const dermatologyContent = {
       },
       {
         heading: 'Betäubung und Ablauf',
-        paragraphs: ['Die meisten Eingriffe erfolgen in örtlicher Betäubung. In ausgewählten Fällen kann eine Vollnarkose organisiert werden. Vor der Operation erklären wir Vorgehen, Nachbehandlung und die zu erwartende Narbe. Entferntes Gewebe wird bei medizinischer Indikation feingeweblich untersucht.']
+        paragraphs: ['Alle operativen Eingriffe unserer Praxis erfolgen ambulant in örtlicher Betäubung. Eine Vollnarkose bieten wir nicht an. Vor der Operation erklären wir Vorgehen, Nachbehandlung und die zu erwartende Narbe. Entferntes Gewebe wird bei medizinischer Indikation feingeweblich untersucht.']
       },
       {
         heading: 'Nach der Operation',
@@ -112,7 +112,7 @@ export const dermatologyContent = {
       },
       {
         heading: 'Ablauf',
-        paragraphs: ['Das Transplantat wird an einer geeigneten Körperstelle entnommen und auf den vorbereiteten Defekt übertragen. In der Regel erfolgt der Eingriff in örtlicher Betäubung; in besonderen Situationen ist eine andere Narkoseform möglich.']
+        paragraphs: ['Das Transplantat wird an einer geeigneten Körperstelle entnommen und auf den vorbereiteten Defekt übertragen. Auch Hauttransplantationen führen wir ambulant in örtlicher Betäubung durch; eine Vollnarkose wird in unserer Praxis nicht angeboten.']
       },
       {
         heading: 'Heilung',
