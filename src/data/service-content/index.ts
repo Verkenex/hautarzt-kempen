@@ -4,13 +4,24 @@ import { dermatologyContent } from './dermatology';
 import { allergologyContent } from './allergology';
 import { phlebologyContent } from './phlebology';
 import { proctologyContent } from './proctology';
+import { serviceSupplements } from './supplements';
 
-export const serviceContent: Record<string, ServicePageContent> = {
+const baseServiceContent: Record<string, ServicePageContent> = {
   ...dermatologyContent,
   ...allergologyContent,
   ...phlebologyContent,
   ...proctologyContent,
   ...aestheticContent
 };
+
+export const serviceContent: Record<string, ServicePageContent> = Object.fromEntries(
+  Object.entries(baseServiceContent).map(([slug, content]) => [
+    slug,
+    {
+      ...content,
+      sections: [...content.sections, ...(serviceSupplements[slug] ?? [])]
+    }
+  ])
+);
 
 export type { ServicePageContent, ContentSection } from './types';
