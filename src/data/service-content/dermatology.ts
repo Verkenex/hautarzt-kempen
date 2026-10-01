@@ -129,7 +129,7 @@ export const dermatologyContent = {
       },
       {
         heading: 'Untersuchung',
-        paragraphs: ['Die verdächtige Stelle wird zunächst klinisch und dermatoskopisch erfasst. Anschließend wird die Haut mit dem LC-OCT-Gerät kontaktlos beziehungsweise schonend optisch untersucht. Die Bildauswertung wird durch softwaregestützte Verfahren unterstützt.']
+        paragraphs: ['Die verdächtige Stelle wird zunächst klinisch und dermatoskopisch erfasst. Anschließend wird die Haut mit dem LC-OCT-Gerät nichtinvasiv optisch untersucht. Die Bildauswertung wird durch softwaregestützte Verfahren unterstützt.']
       },
       {
         heading: 'Weitere Einsatzgebiete',
