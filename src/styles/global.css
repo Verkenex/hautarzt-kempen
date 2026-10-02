@@ -822,3 +822,17 @@ img{height:auto}
     line-height:1.55;
   }
 }
+
+
+/* Service detail: restore single-column layout below desktop breakpoint.
+   This must come after the later wide-screen .content-grid rule. */
+@media(max-width:900px){
+  .service-page .content-grid{
+    grid-template-columns:minmax(0,1fr);
+    max-width:none;
+    margin-inline:auto;
+  }
+  .service-page .content-grid > *{
+    min-width:0;
+  }
+}
